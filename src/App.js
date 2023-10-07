@@ -44,12 +44,15 @@ function App() {
               draggable: true,
             }}
             properties={{
-              hintContent: '2',
+              iconLayout: (
+                <div style={{ width: '10px', height: '10px' }}>1</div>
+              ),
               iconContent: '5',
               iconCaption: '10',
               balloonContent: '1',
               balloonContentBody: '11',
             }}
+            modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
           />
         </Map>
       </YMaps>
