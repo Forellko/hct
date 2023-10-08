@@ -39,6 +39,9 @@ function App() {
           className="w-[70%] h-[95%] m-[20px] max-md:h-[50%] max-md:w-[95%]"
         >
           <Placemark
+            onDragEnd={(e) => {
+              console.log(e);
+            }}
             geometry={[47.2, 38.9]}
             options={{
               draggable: true,
@@ -54,10 +57,17 @@ function App() {
         </Map>
       </YMaps>
       <List
-        className="w-[30%] h-[99%] m-[20px] max-md:h-[40%] max-md:w-[95%]"
+        className="w-[30%] h-[95%] m-[20px] max-md:h-[40%] max-md:w-[95%]"
         bordered
         header={<div>Log</div>}
         dataSource={list}
+        pagination={{
+          align: 'center',
+          pageSize: 3,
+          position: 'bottom',
+          hideOnSinglePage: true,
+          showSizeChanger: false,
+        }}
         renderItem={(item) => (
           <List.Item className="flex justify-between">
             <div className="w-[220px]">{item.title}</div>
