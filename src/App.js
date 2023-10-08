@@ -50,8 +50,7 @@ function App() {
               iconLayout: (
                 <div style={{ width: '10px', height: '10px' }}>1</div>
               ),
-              balloonContent:
-                '<div class="flex flex-col justify-between"><div>1</div><div>2</div><div>3</div></div>',
+              balloonContent: `<div class="flex flex-col justify-between w-[150px]"><div class="flex justify-between"><div>Температура</div><div>0</div></div><div class="flex justify-between"><div>Влажность</div><div>0</div></div>`,
             }}
             modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
           />
