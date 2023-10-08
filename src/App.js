@@ -26,7 +26,7 @@ function App() {
   };
 
   return (
-    <div className="flex h-screen w-screen">
+    <div className="flex max-md:flex-col h-screen w-screen">
       {contextHolder}
       <YMaps>
         <Map
@@ -36,7 +36,7 @@ function App() {
             copyrightLogoVisible: false,
             suppressMapOpenBlock: true,
           }}
-          className="w-[70%] h-[95%] m-[20px]"
+          className="w-[70%] h-[95%] m-[20px] max-md:h-[50%] max-md:w-[95%]"
         >
           <Placemark
             geometry={[47.2, 38.9]}
@@ -47,9 +47,6 @@ function App() {
               iconLayout: (
                 <div style={{ width: '10px', height: '10px' }}>1</div>
               ),
-              iconContent: '5',
-              iconCaption: '10',
-              balloonContent: '1',
               balloonContentBody: '11',
             }}
             modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
@@ -57,7 +54,7 @@ function App() {
         </Map>
       </YMaps>
       <List
-        className="w-[30%] h-[99%] p-[5px] m-[5px]"
+        className="w-[30%] h-[99%] m-[20px] max-md:h-[40%] max-md:w-[95%]"
         bordered
         header={<div>Log</div>}
         dataSource={list}
