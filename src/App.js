@@ -40,7 +40,7 @@ function App() {
         >
           <Placemark
             onDragEnd={(e) => {
-              console.log(e);
+              console.log(e.originalEvent);
             }}
             geometry={[47.2, 38.9]}
             options={{
@@ -50,7 +50,8 @@ function App() {
               iconLayout: (
                 <div style={{ width: '10px', height: '10px' }}>1</div>
               ),
-              balloonContentBody: '11',
+              balloonContent:
+                '<div class="flex flex-col justify-between"><div>1</div><div>2</div><div>3</div></div>',
             }}
             modules={['geoObject.addon.balloon', 'geoObject.addon.hint']}
           />
